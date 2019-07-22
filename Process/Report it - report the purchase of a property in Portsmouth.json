@@ -3,20 +3,20 @@
   "processDescription": "",
   "props": {
     "id": "AF-Process-fba52bcf-e0fc-4e1f-a2d7-07c650291beb",
-    "category": "AF-Category-58b5804c-279d-4e7e-a48e-736346248a3f",
+    "category": "AF-Category-40a61e5c-1cab-45d1-8280-41a6c3cc666c",
     "tags": "",
     "viewGroup": null,
     "viewGroupToken": null,
     "date_due": "",
     "date_due_warn": "",
     "showCaseReference": false,
+    "isPublished": true,
     "isSubform": false,
-    "notes": false,
+    "notes": "changed category, question about tenants and added a condition to a field",
     "initial_stage": "Stage 1",
     "initial_stage_id": "AF-Stage-1e843394-ed7f-41a7-91f0-33a466ca0df1",
     "serverSubmit": true,
-    "prefix": "CT",
-    "isPublished": true
+    "prefix": "CT"
   },
   "stages": {
     "Stage 1": {
@@ -11689,7 +11689,7 @@
                 {
                   "type": "number",
                   "props": {
-                    "label": "How many tenants have occupied?",
+                    "label": "Number of occupants in the property",
                     "dataName": "tenants",
                     "labelPosition": "alignLeft",
                     "defaultValue": "",
@@ -12535,7 +12535,7 @@
                     "styleAsButton": null,
                     "hideWhenBlank": null,
                     "hidden": null,
-                    "displayCondition": null,
+                    "displayCondition": "{payDD} icontains 'yes'",
                     "selectCondition": null,
                     "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
                     "mandatoryCondition": null,
@@ -12543,7 +12543,29 @@
                     "mandatory": true,
                     "mandatoryMessage": "This field is required"
                   },
-                  "conditionInputs": [],
+                  "conditionInputs": [
+                    {
+                      "element": "select",
+                      "value": "payDD",
+                      "type": [
+                        "fields"
+                      ]
+                    },
+                    {
+                      "element": "select",
+                      "value": "icontains",
+                      "type": [
+                        "_select"
+                      ]
+                    },
+                    {
+                      "element": "select",
+                      "value": "yes",
+                      "type": [
+                        "list"
+                      ]
+                    }
+                  ],
                   "id": "AF-Field-858117fc-010e-47a8-b0d5-36f8a035e744"
                 },
                 {
@@ -13250,7 +13272,7 @@
           "populated": true
         },
         {
-          "label": "How many tenants have occupied?",
+          "label": "Number of occupants in the property",
           "dataName": "tenants",
           "populated": true
         },
